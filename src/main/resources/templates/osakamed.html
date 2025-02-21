@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>OsakaMed</title>
+        <link rel="icon" type="image/x-icon" th:href="@{/assets/icon.png}">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='' th:href="@{/reset.css}">
+        <link rel='stylesheet' href='' th:href="@{/osakamed_style.css}">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="perfil_popup_box" class="popup_box inactive"></div>
+        <div id="perfil_popup" class="perfil popup inactive">
+            <a href="perfil">
+                <div>
+                    <img th:src="@{/assets/perfil.png}" alt="">
+                    <p>Perfil</p>
+                </div>
+            </a>
+            <a id="perfil_sair">
+                <div>
+                    <img th:src="@{/assets/sair.png}" alt="">
+                    <p>Sair</p>
+                </div>
+            </a>
+        </div>
+
+        <header class="main_header semconta">
+            <div class="header_div">
+                <div class="left_side">
+                    <a class="logo" href="/osakamed/">
+                        <img class="logo" th:src="@{/assets/logo.png}" alt="">
+                    </a>
+                    <button class="header_button small_margin_left button">
+                        <p>Notícias</p>
+                    </button>
+                    <button class="header_button small_margin_left button">
+                        <p>Pesquisa de Satisfação</p>
+                    </button>
+                    <button class="header_button small_margin_left button" style="justify-content: center;">
+                        <p style="width: 150px;">Consulta Virtual</p>
+                    </button>
+                </div>
+                <div class="right_side">
+                    <button class="sidebar_button square_button">
+                        <div></div>
+                        <div></div>
+                        <div style="margin-bottom: 0px;"></div>
+                    </button>
+                    <button class="login_button button">
+                        <a href="login">
+                            <p>Login</p>
+                            <img th:src="@{/assets/user.png}" alt="">
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <header class="main_header usuario medico">
+            <div class="header_div">
+                <div class="left_side">
+                    <a class="logo" href="/osakamed/">
+                        <img class="logo" th:src="@{/assets/logo.png}" alt="">
+                    </a>
+                    <p class="title usuario">HOME<br>Espaço paciente</p>
+                    <p class="title medico">HOME<br>Espaço médico</p>
+                </div>
+                <div class="right_side">
+                    <button class="square_button">
+                        <img th:src="@{/assets/sino.png}" alt="">
+                    </button>
+                    <button id="perfil_popup_botao" class="small_margin_left square_button">
+                        <img th:src="@{/assets/user.png}" alt="">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="content semconta">
+            <div class="links medium_margin">
+                <a href="consultas">
+                    <img th:src="@{/assets/agendar_consulta.png}" alt="Agendar consultas">
+                    <p>Agendar novas consultas</p>
+                </a>
+                <a href="planos">
+                    <img th:src="@{/assets/plano_de_saude.png}" alt="Plano de saúde">
+                    <p>Conheça os nossos planos de saúde</p>
+                </a>
+                <a href="especialistas">
+                    <img th:src="@{/assets/especialista.png}" alt="Médicos">
+                    <p>Encontre os nossos especialistas aqui</p>
+                </a>
+                <a href="minhas-consultas">
+                    <img th:src="@{/assets/minhas_consultas.png}" alt="Minhas consultas">
+                    <p>Minhas consultas</p>
+                </a>
+            </div>
+            <div class="imagens pink_background medium_margin_bottom" style="justify-content: space-evenly;">
+                <div>
+                    <img th:src="@{/assets/hospital_anime.png}" alt="">
+                    <div>
+                        <p class="medium_text color_white">Nossa Localização</p>
+                    </div>
+                </div>
+                <div>
+                    <img th:src="@{/assets/pikachu_internado.png}" alt="">
+                    <div>
+                        <p class="medium_text color_white">Sempre cuidando da sua saúde</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content usuario">
+            <div class="pink_background small_margin_top medium_margin_bottom" style="height: 625px;">
+                <div class="big_box" style="height: 80%; justify-content: space-around;">
+                    <div style="flex-direction: column; align-items: start;">
+                        <h1 class="extra_small_margin_bottom_fixed">Bem-Vindo de volta</h1>
+                        <p class="small_margin_bottom_fixed small_text color_text" style="width: 90%;">Aqui estão alguns atalhos essenciais para verificar sua saúde</p>
+                        <div class="grid_button">
+                            <a href="consultas" class="button">
+                                <p>Agendar consulta</p>
+                            </a>
+                            <a href="planos" class="button">
+                                <p>Planos</p>
+                            </a>
+                            <a href="especialistas" class="button">
+                                <p>Verificar médicos</p>
+                            </a>
+                            <a href="minhas-consultas" class="button">
+                                <p>Minhas consultas</p>
+                            </a>
+                        </div>
+                    </div>
+                    <img th:src="@{/assets/paciente_e_medico.png}" alt="" style="height: 73%; border-radius: 7px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="content medico">
+            <div class="pink_background small_margin_top medium_margin_bottom" style="height: 625px;">
+                <div class="big_box" style="height: 80%; justify-content: space-around;">
+                    <div style="flex-direction: column; align-items: start;">
+                        <h1 class="extra_small_margin_bottom_fixed">Bem-Vindo de volta Dr(a)</h1>
+                        <p class="small_margin_bottom_fixed small_text color_text" style="width: 90%;">Aqui estão alguns atalhos para melhorar sua rotina.</p>
+                        <div class="grid_button">
+                            <a href="" class="button">
+                                <p>Consultas do dia</p>
+                            </a>
+                            <a href="" class="button">
+                                <p>Realizar consultas</p>
+                            </a>
+                            <a href="" class="button">
+                                <p>Minhas avaliações</p>
+                            </a>
+                            <a href="" class="button">
+                                <p>Ambiente virtual</p>
+                            </a>
+                        </div>
+                    </div>
+                    <img th:src="@{/assets/paciente_e_medico.png}" alt="" style="height: 73%; border-radius: 7px;">
+                </div>
+            </div>
+        </div>
+        <footer class="main_footer">
+            <p>OsakaMed | 2025 - © Todos os direitos reservados</p>
+        </footer>
+    </body>
+    <script th:src="@{/osakamed_script.js}"></script>
+</html>

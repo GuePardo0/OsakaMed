@@ -1,0 +1,178 @@
+
+
+/* ===> Important ===> */
+
+:root {
+    --primary: #FFCBEB;
+    --secondary: #FFA7DF;
+    --border: #E3BED5;
+    --accent: #FFF0F9;
+    --gray: #595959;
+    --dark_pink: #FF6BC9;
+}
+
+@font-face {
+    font-family: 'HermeneusOne';
+    src: url('/fonts/HermeneusOne-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* <--- Important <--- */
+
+/* ===> Useful ===> */
+
+.button {
+    border-radius: 7px;
+}
+
+/* <--- Useful <--- */
+
+.login_header {
+    position: absolute;
+    top: calc(-26.8vw + 85.76px);
+    background-color: var(--accent);
+}
+
+.login_header img {
+    width: 100%;
+}
+
+#header_filler {
+    height: 1000px;
+    background-color: var(--accent);
+}
+
+.content {
+    height: 625px;
+    min-height: 0;
+    background-color: var(--accent);
+}
+
+.batom_box {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+}
+
+.batom {
+    display: block;
+}
+
+.top, .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 154px;
+    background-color: #FFA7DFE5;
+}
+
+.bottom {
+    height: 496px;
+    background-color: white;
+}
+
+.top div {
+    display: flex;
+    justify-content: end;
+    height: 71.4%;
+    width: 30%;
+    margin-right: 15px;
+}
+
+.top div:last-child {
+    justify-content: start;
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+.logo {
+    height: 100%;
+}
+
+.top p {
+    width: 185px;
+    height: fit-content;
+    font-family: 'HermeneusOne';
+    font-size: 30px;
+    line-height: 36.27px;
+    color: white;
+}
+
+.bottom .left, .bottom .right, .bottom .center {
+    height: 350px;
+}
+
+.center {
+    border-style: solid;
+    border-image-source: url('/borders/border1.png');
+    border-image-slice: 6%;
+    border-image-repeat: round;
+    border-width: 1.6px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 40.173%;
+    margin-left: 3.828%;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 40.983%;
+    margin-left: 3.018%;
+}
+
+#nome_senha_invalidos {
+    height: 16px;
+    font-family: "Istok Web";
+    font-size: 11px;
+    font-weight: 400;
+    color: #E76767;
+    margin-bottom: 13px;
+}
+
+.cadastro {
+    flex-direction: column;
+    justify-content: start;
+}
+
+.cadastro .input_area {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 17px;
+}
+
+b {
+    font-weight: bold;
+}
+
+/*
+html {
+    overflow-y: hidden;
+}
+*/
+
+@media screen and (max-width: 900px) {
+    .batom .bottom {
+        flex-direction: column;
+    }
+
+    .bottom .center {
+        width: 70%;
+        height: 0px;
+    }
+}

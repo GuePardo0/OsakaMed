@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>OsakaMed</title>
+        <link rel="icon" type="image/x-icon" th:href="@{/assets/icon.png}">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='' th:href="@{/reset.css}">
+        <link rel='stylesheet' href='' th:href="@{/osakamed_style.css}">
+        <link rel='stylesheet' href='' th:href="@{/login.css}">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="cadastro_popup_shadow" class="shadow inactive"></div>
+        <div id="cadastro_popup_box" class="popup_box inactive">
+            <div id="cadastro_popup" class="cadastro popup">
+                <h1 class="color_gray" style="font-weight: 400; margin-bottom: 15.6%;">Por favor, preencha os campos abaixo para realizar o seu cadastro</h1>
+                <div class="input_area">
+                    <div>
+                        <label for="">Digite o seu nome</label>
+                        <input id="cadastro_nome" type="text" placeholder="Digite o seu nome">
+                        <p><small>Ele será usado como forma de login posteriormente</small></p>
+                    </div>
+                    <div>
+                        <label for="">Digite a sua idade</label>
+                        <input id="cadastro_idade" type="text" placeholder="Digite a sua idade">
+                    </div>
+                    <div>
+                        <label for="">Criei uma senha</label>
+                        <input id="cadastro_senha" type="password" placeholder="Digite a sua senha">
+                        <p></p><small><b>Recomendamos que sua senha possua no mínimo:</b><br><span>●</span> Uma letra maiúscula<br><span>●</span> Uma letra minúscula<br><span>●</span> Um número<br><span>●</span> Um caractere especial:<br>@ $ ! * # ? &</small></p>
+                    </div>
+                    <div>
+                        <label for="">Digite o plano de saúde que atende</label>
+                        <input id="cadastro_plano" type="text" placeholder="Digite o plano de saúde">
+                    </div>
+                    <div></div>
+                    <button id="cadastrar" class="button">
+                        <p>Cadastrar</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <header class="login_header" id="login_header">
+            <img th:src="@{/assets/castelo_osaka.png}" alt="Castelo de Osaka">
+        </header>
+        <div id="header_filler"></div>
+
+        <div class="batom_box" id="batom_box">
+            <div class="batom big_box">
+                <div class="top">
+                    <div>
+                        <a class="logo" href="/osakamed/">
+                            <img class="logo" th:src="@{/assets/logo.png}" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <p>Sempre cuidadando da sua saúde</p>
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <div class="left">
+                        <h1 class="extra_small_margin_bottom_fixed">Bem-Vindo à OsakaMed</h1>
+                        <p class="medium_margin_bottom_fixed small_text color_text">Primeira vez na OsakaMed? Realize seu cadastro para acessar todas as oportunidades disponíveis para você.</p>
+                        <button id="cadastro_popup_botao" class="button" style="width: 194px; height: 51px;">
+                            <p style="font-size: 16px; font-weight: 700;">Quero me cadastrar</p>
+                        </button>
+                    </div>
+                    <div class="center"></div>
+                    <div class="right">
+                        <h1 class="small_margin_bottom_fixed">Acesse sua conta</h1>
+                        <div class="input_area">
+                            <div>
+                                <label for="">LOGIN</label>
+                                <input id="login_nome" type="text" placeholder="Digite o seu nome">
+                            </div>
+                            <div>
+                                <label for="">SENHA</label>
+                                <input id="login_senha" type="password" placeholder="Digite a sua senha">
+                            </div>
+                        </div>
+                        <p id="nome_senha_invalidos"></p>
+                        <button id="login" class="button" style="width: 101px; height: 41px;">
+                            <p style="font-size: 16px; font-weight: 700;">Entrar</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content" id="content"></div>
+    </body>
+    <script th:src="@{/login.js}"></script>
+</html>

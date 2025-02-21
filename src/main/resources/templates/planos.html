@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>OsakaMed</title>
+        <link rel="icon" type="image/x-icon" th:href="@{/assets/icon.png}">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='' th:href="@{/reset.css}">
+        <link rel='stylesheet' href='' th:href="@{/osakamed_style.css}">
+        <link rel='stylesheet' href='' th:href="@{/planos.css}">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="login_header" id="login_header">
+            <img th:src="@{/assets/castelo_osaka.png}" alt="Castelo de Osaka">
+        </header>
+        <div id="header_filler"></div>
+
+        <div class="batom_box" id="batom_box">
+            <div class="batom big_box">
+                <div class="top">
+                    <div>
+                        <a class="logo" href="/osakamed/">
+                            <img class="logo" th:src="@{/assets/logo.png}" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <p>Sempre cuidadando da sua saúde</p>
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <div class="left">
+                        <h1 class="extra_small_margin_bottom_fixed" style="font-weight: 700; font-size: 48px; width: 85%;">Temos o plano ideal para o que você precisa</h1>
+                        <p class="small_text color_gray" style="width: 56.6%;">Cuidar da sua saúde é a nossa prioridade, porque acreditamos que bem-estar e qualidade de vida andam juntos.</p>
+                    </div>
+                    <div class="right">
+                        <div class="plano">
+                            <div class="imagem">
+                                <img th:src="@{/assets/coração.png}" alt="">
+                            </div>
+                            <div class="texto">
+                                <h1>Plano Essencial</h1>
+                                <div></div>
+                                <p><span>●</span> Exames laboratoriais e de imagem básicos.<br><span>●</span> Atendimento em ambulatório e pronto-socorro.<br><span>●</span> Internações apenas em enfermaria.<br><span>●</span> Cobertura regional.</p>
+                                <p><span>●</span> Consultas com clínico geral e especialistas credenciados.</p>
+                                <p class="indicacao"><b>Indicado para:</b> jovens, estudantes e autônomos que querem um plano acessível.</p>
+                                <div class="button_div">
+                                    <button class="button">
+                                        <img th:src="@{/assets/carrinho.png}" alt="">
+                                        <p>R$199,90/Mês</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plano">
+                            <div class="imagem">
+                                <img th:src="@{/assets/estrela.png}" alt="">
+                            </div>
+                            <div class="texto">
+                                <h1>Plano Plus</h1>
+                                <div></div>
+                                <p><span>●</span> Tudo do Plano Essencial +<br><span>●</span> Atendimento nacional.<br><span>●</span> Internação em apartamento privativo.<br><span>●</span> Maior rede de especialistas credenciados.</p>
+                                <p><span>●</span> Exames e procedimentos de alta complexidade.</p>
+                                <p class="indicacao"><b>Indicado para:</b> famílias e profissionais que viajam com frequência.</p>
+                                <div class="button_div">
+                                    <button class="button">
+                                        <img th:src="@{/assets/carrinho.png}" alt="">
+                                        <p>R$349,90/Mês</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plano">
+                            <div class="imagem">
+                                <img th:src="@{/assets/diamante.png}" alt="">
+                            </div>
+                            <div class="texto">
+                                <h1>Plano Premium</h1>
+                                <div></div>
+                                <p><span>●</span> Tudo do Plano Plus +<br><span>●</span> Atendimento internacional.<br><span>●</span> Internações em suítes hospitalares.<br><span>●</span> Telemedicina 24h.</p>
+                                <p><span>●</span> Check-ups completos anuais.<br><span>●</span> Atendimento odontológico incluso.</p>
+                                <p class="indicacao"><b>Indicado para:</b> executivos, empresas e quem busca o melhor atendimento.</p>
+                                <div class="button_div">
+                                    <button class="button">
+                                        <img th:src="@{/assets/carrinho.png}" alt="">
+                                        <p>R$599,90/Mês</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content" id="content"></div>
+    </body>
+    <script th:src="@{/planos.js}"></script>
+</html>

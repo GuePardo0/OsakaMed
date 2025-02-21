@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>OsakaMed</title>
+        <link rel="icon" type="image/x-icon" th:href="@{/assets/icon.png}">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='' th:href="@{/reset.css}">
+        <link rel='stylesheet' href='' th:href="@{/osakamed_style.css}">
+        <link rel='stylesheet' href='' th:href="@{/consultas.css}">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="main_header">
+            <div class="header_div">
+                <div class="left_side">
+                    <a class="logo" href="/osakamed/">
+                        <img class="logo" th:src="@{/assets/logo.png}" alt="">
+                    </a>
+                    <p class="title">Agendar consulta</p>
+                </div>
+                <div class="right_side">
+                    <button class="square_button">
+                        <img th:src="@{/assets/sino.png}" alt="">
+                    </button>
+                    <button class="small_margin_left square_button">
+                        <img th:src="@{/assets/user.png}" alt="">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="pink_background small_margin_top medium_margin_bottom" style="height: 625px;">
+                <div class="big_box" style="height: 80%; justify-content: space-around;">
+                    <div class="top">
+                        <div class="input_area">
+                            <div>
+                                <label for="">Nome do(a) médico(a):</label>
+                                <input type="text" placeholder="Nome...">
+                            </div>
+                            <div>
+                                <label for="">Escolha o dia ideal para sua consulta:</label>
+                                <input type="date" style="width: 257.45px;">
+                            </div>
+                            <div>
+                                <label for="">Especialidade do médico(a):</label>
+                                <input type="text" placeholder="Idade...">
+                                <small style="color: #E76767; width: 225px;">Os dados do médico não conferem ou não existem, por favor tente novamente.</small>
+                            </div>
+                        </div>
+                        <div class="status">
+                            <h1 class="color_gray">Status do dia escolhido:</h1>
+                            <p style="color: #ABABAB;">O dia ainda não foi selecionado, escolha para verificar seu status.</p>
+                            <p style="color: #2BA70C;">O dia escolhido está livre, quando confirmar você será agendado para este dia.</p>
+                            <p style="color: #F28100;">O dia escolhido está lotado, logo você ficará na lista de espera. Caso haja desistência você ocupará o lugar.</p>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <p>Por favor, preencha todos os campos para continuar.</p>
+                        <div style="width: 420px;">
+                            <button class="button">
+                                <p>Cancelar agendamento</p>
+                            </button>
+                            <button class="button" style="margin-left: 20px;">
+                                <p>Confirmar Agendamento</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="main_footer">
+            <p>OsakaMed | 2025 - © Todos os direitos reservados</p>
+        </footer>
+    </body>
+    <script th:src="@{/consultas.js}"></script>
+</html>

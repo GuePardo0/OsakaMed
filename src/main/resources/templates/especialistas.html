@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Page Title</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='' th:href="@{/reset.css}">
+        <link rel='stylesheet' href='' th:href="@{/start_style.css}">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="start_header">
+            <div class="header_div">
+                <div class="left_side">
+                    <a class="logo" href="/osakamed/">
+                        <img class="logo" th:src="@{/assets/logo.png}" alt="">
+                    </a>
+                    <button class="espaco">
+                        <p>Notícias</p>
+                    </button>
+                    <button class="espaco">
+                        <p>Pesquisa de Satisfação</p>
+                    </button>
+                    <button class="espaco" style="justify-content: center;">
+                        <p style="width: 150px;">Consulta Virtual</p>
+                    </button>
+                </div>
+                <div class="right_side">
+                    <button class="sidebar_button">
+                        <div></div>
+                        <div></div>
+                        <div style="margin-bottom: 0px;"></div>
+                    </button>
+                    <button class="login">
+                        <a href="login">
+                            <p>Login</p>
+                            <img th:src="@{/assets/user.png}" alt="">
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="sobre">
+                <a href="consultas">
+                    <img th:src="@{/assets/agendar_consulta.png}" alt="Agendar consultas">
+                    <p>Agendar novas consultas</p>
+                </a>
+                <a href="planos">
+                    <img th:src="@{/assets/plano_de_saude.png}" alt="Plano de saúde">
+                    <p>Conheça os nossos planos de saúde</p>
+                </a>
+                <a href="minhas-consultas">
+                    <img th:src="@{/assets/minhas_consultas.png}" alt="Minhas consultas">
+                    <p>Minhas consultas</p>
+                </a>
+            </div>
+            <div class="images">
+                
+            </div>
+        </div>
+        <footer class="start_footer">
+            <p>OsakaMed | 2025 - © Todos os direitos reservados</p>
+        </footer>
+    </body>
+    <script th:src="@{/script.js}"></script>
+</html>

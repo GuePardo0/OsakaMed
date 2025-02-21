@@ -1,0 +1,197 @@
+/* ===> Important ===> */
+
+:root {
+    --primary: #FFCBEB;
+    --secondary: #FFA7DF;
+    --border: #E3BED5;
+    --accent: #FFF0F9;
+    --gray: #595959;
+    --dark_pink: #FF6BC9;
+}
+
+@font-face {
+    font-family: 'HermeneusOne';
+    src: url('/fonts/HermeneusOne-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* <--- Important <--- */
+
+.login_header {
+    position: absolute;
+    top: calc(-26.8vw + 85.76px);
+    background-color: var(--accent);
+}
+
+.login_header img {
+    width: 100%;
+}
+
+#header_filler {
+    height: 1000px;
+    background-color: var(--accent);
+}
+
+.content {
+    height: 625px;
+    min-height: 0;
+    background-color: var(--accent);
+}
+
+.batom_box {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+}
+
+.batom {
+    display: block;
+}
+
+.top, .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 154px;
+    background-color: #FFA7DFE5;
+}
+
+.bottom {
+    height: 496px;
+    background-color: white;
+}
+
+.top div {
+    display: flex;
+    justify-content: end;
+    height: 71.4%;
+    width: 30%;
+    margin-right: 15px;
+}
+
+.top div:last-child {
+    justify-content: start;
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+.logo {
+    height: 100%;
+}
+
+.top p {
+    width: 185px;
+    height: fit-content;
+    font-family: 'HermeneusOne';
+    font-size: 30px;
+    line-height: 36.27px;
+    color: white;
+}
+
+.bottom .left {
+    height: 350px;
+}
+
+.bottom .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 40.173%;
+    margin-left: 3.828%;
+}
+
+.bottom .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    width: 47%;
+    height: 446px;
+}
+
+.plano {
+    width: 544px;
+    height: 120px;
+}
+
+.plano .imagem {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--dark_pink);
+}
+
+.plano .imagem img {
+    width: 65px;
+}
+
+.plano .texto {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    align-items: start;
+    width: 100%;
+    height: calc(100% - 16px);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: var(--secondary);
+}
+
+.plano .texto h1 {
+    padding-left: 5px;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+}
+
+.plano .texto p {
+    padding-left: 5px;
+    font-size: 10px;
+    font-weight: 300;
+    color: white;
+}
+
+.plano .texto .indicacao {
+    padding-top: 6px;
+}
+
+.plano .texto p span {
+    font-size: 6px;
+}
+
+.plano .texto .button_div {
+    align-items: end;
+    justify-content: end;
+    width: 90%;
+    height: 90%;
+}
+
+.plano .texto button {
+    width: 120px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: none;
+}
+
+.plano .texto button p {
+    color: black;
+    font-style: italic;
+}
+
+.plano .texto button img {
+    width: 16px;
+}
+
+@media screen and (max-width: 900px) {
+    .batom .bottom {
+        flex-direction: column;
+    }
+}
