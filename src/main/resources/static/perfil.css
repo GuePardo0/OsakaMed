@@ -1,0 +1,202 @@
+.big_box {
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    width: calc(40% - 152px);
+    height: calc(80% - 78px);
+}
+
+.big_box:nth-child(2) {
+    width: calc(40% - 42px);
+    height: calc(80% - 64px);
+    padding: 21px 32px 21px 32px;
+}
+
+.big_box div {
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.region .image {
+    margin-bottom: 40px;
+    align-items: start;
+    justify-content: end;
+}
+
+.image img {
+    width: 200px;
+}
+
+.image div {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    box-shadow: inset 1px 1px 0 #E3BED5, inset -1px -1px 0 #E3BED5, inset 1px -1px 0 #E3BED5, inset -1px 1px 0 #E3BED5;
+}
+
+.edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-color: white;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: #ABABAB;
+    margin: 0 0 10px 10px;
+}
+
+.edit img {
+    width: 14px;
+    height: 14px;
+}
+
+.edit:hover {
+    background-color: #F4F4F4;
+}
+
+.region p {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--gray);
+    margin-bottom: 11px;
+}
+
+.big_box:first-child p span {
+    color: var(--dark_pink);
+    font-weight: 600;
+}
+
+.big_box .button_area {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.button_area .button {
+    height: 36px;
+    border-radius: 7px;
+}
+
+.button_area .button p {
+    font-weight: 300;
+    font-size: 16px;
+    margin-left: 9px;
+}
+
+.big_box .plano_div {
+    width: 100%;
+}
+
+.big_box .plano {
+    flex-direction: row;
+    width: 100%;
+    height: 120px;
+}
+
+.plano .imagem {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--dark_pink);
+}
+
+.plano .imagem img {
+    width: 65px;
+}
+
+.plano .texto {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    align-items: start;
+    width: 100%;
+    height: calc(100% - 16px);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: var(--secondary);
+}
+
+.plano .texto h1 {
+    padding-left: 5px;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+}
+
+.plano .texto p {
+    padding-left: 5px;
+    font-size: 10px;
+    font-weight: 300;
+    color: white;
+}
+
+.plano .texto .indicacao {
+    padding-top: 6px;
+}
+
+.plano .texto p span {
+    font-size: 6px;
+}
+
+.plano .texto .button_div {
+    align-items: end;
+    justify-content: end;
+    width: 90%;
+    height: 90%;
+}
+
+.plano .texto button {
+    width: 120px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: none;
+}
+
+.plano .texto button p {
+    color: black;
+    font-style: italic;
+}
+
+.plano .texto button img {
+    width: 16px;
+}
+
+.alterar_senha {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.big_box .input_area {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    grid-template-columns: auto auto;
+    column-gap: 50px;
+    row-gap: 7px;
+}
+
+.alterar_senha_button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 114px;
+    height: 36px;
+    border-radius: 7px;
+}
+
+.alterar_senha_button p {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+b {
+    font-weight: bold;
+}

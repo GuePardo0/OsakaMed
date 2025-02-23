@@ -8,10 +8,24 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' href='' th:href="@{/reset.css}">
         <link rel='stylesheet' href='' th:href="@{/osakamed_style.css}">
-        <link rel='stylesheet' href='' th:href="@{/consultas.css}">
+        <link rel='stylesheet' href='' th:href="@{/minhas-avaliacoes.css}">
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div id="realizar_popup_shadow" class="shadow inactive"></div>
+        <div id="realizar_popup_box" class="popup_box inactive">
+            <div id="realizar_popup" class="realizar popup">
+                <h1>Por favor, dê a descrição sobre o que aconteceu e a necessidade do paciente</h1>
+                <label for="descrição">Descrição da consulta:</label>
+                <textarea name="descrição" id="descrição" placeholder="Conte em detalhes o que houve durante a consulta (sintomas do paciente, tratamento sugerido, medicamentos, exames...)."></textarea>
+                <div>
+                    <button class="button">
+                        <p>ENVIAR DESCRIÇÃO</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <div id="perfil_popup_box" class="popup_box inactive"></div>
         <div id="perfil_popup" class="perfil popup inactive">
             <a href="perfil">
@@ -34,7 +48,7 @@
                     <a class="logo" href="/osakamed/">
                         <img class="logo" th:src="@{/assets/logo.png}" alt="">
                     </a>
-                    <p class="title">Agendar consulta</p>
+                    <p class="title">Minhas avaliações</p>
                 </div>
                 <div class="right_side">
                     <button class="square_button">
@@ -50,38 +64,25 @@
         <div class="content">
             <div class="pink_background small_margin_top medium_margin_bottom" style="height: 625px;">
                 <div class="big_box">
-                    <div class="top">
-                        <div class="input_area">
-                            <div class="div">
-                                <label for="">Nome do(a) médico(a):</label>
-                                <input type="text" placeholder="Nome...">
+                    <div class="avaliacoes_display">
+                        <div class="avaliacao">
+                            <div style="margin-bottom: 14px;">
+                                <div class="imagem">
+                                    <img src="/assets/perfil_padrao_medico.png" alt="">
+                                    <div></div>
+                                </div>
+                                <div class="dados">
+                                    <p>Nome...</p>
+                                    <div class="estrelas">
+                                        <img th:src="@{/assets/estrela_rosa.png}" alt="">
+                                        <img th:src="@{/assets/estrela_rosa.png}" alt="">
+                                        <img th:src="@{/assets/estrela_rosa.png}" alt="">
+                                        <img th:src="@{/assets/estrela_branca.png}" alt="">
+                                        <img th:src="@{/assets/estrela_branca.png}" alt="">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="div">
-                                <label for="">Escolha o dia ideal para sua consulta:</label>
-                                <input type="date" style="width: 257.45px;">
-                            </div>
-                            <div class="div">
-                                <label for="">Especialidade do médico(a):</label>
-                                <input type="text" placeholder="Idade...">
-                                <small style="color: #E76767; width: 225px;">Os dados do médico não conferem ou não existem, por favor tente novamente.</small>
-                            </div>
-                        </div>
-                        <div class="status">
-                            <h1 class="color_gray">Status do dia escolhido:</h1>
-                            <p style="color: #ABABAB;">O dia ainda não foi selecionado, escolha para verificar seu status.</p>
-                            <p style="color: #2BA70C;">O dia escolhido está livre, quando confirmar você será agendado para este dia.</p>
-                            <p style="color: #F28100;">O dia escolhido está lotado, logo você ficará na lista de espera. Caso haja desistência você ocupará o lugar.</p>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <p>Por favor, preencha todos os campos para continuar.</p>
-                        <div style="width: 420px;">
-                            <button class="button">
-                                <p>Cancelar agendamento</p>
-                            </button>
-                            <button class="button" style="margin-left: 20px;">
-                                <p>Confirmar Agendamento</p>
-                            </button>
+                            <span>Ótimo profissional! Fui muito bem atendido(a), o médico demonstrou conhecimento e atenção durante a consulta. Explicou tudo com clareza e se mostrou prestativo. O atendimento foi eficiente, mas houve um pequeno atraso na consulta. No geral, recomendo e voltaria a consultar!</span>
                         </div>
                     </div>
                 </div>
@@ -92,6 +93,6 @@
             <p>OsakaMed | 2025 - © Todos os direitos reservados</p>
         </footer>
     </body>
-    <script th:src="@{/consultas.js}"></script>
+    <script th:src="@{/minhas-avaliacoes.js}"></script>
     <script th:src="@{/popup_perfil.js}"></script>
 </html>

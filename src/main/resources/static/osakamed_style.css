@@ -125,6 +125,7 @@ h1 {
 }
 
 .pink_background {
+    justify-content: space-evenly;
     width: 100%;
     height: 500px;
     background-color: var(--accent);
@@ -175,21 +176,22 @@ h1 {
 }
 
 .big_box {
-    width: 80.556%;
-    height: 100%;
+    width: calc(80.556% - 152px);
+    height: calc(80% - 78px);
+    padding: 39px 76px;
     box-shadow: 0 4px 4px #00000040;
     background-color: white;
     z-index: 1;
 }
 
-.input_area {
+.input_area, .drop_down_area {
     justify-content: space-between;
     align-items: start;
     width: 100%;
     height: fit-content;
 }
 
-.input_area div {
+.input_area .div, .drop_down_area .drop_down_div {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -197,11 +199,11 @@ h1 {
     height: fit-content;
 }
 
-.input_area label {
+.input_area label, .drop_down_area label {
     width: max-content;
 }
 
-.input_area label, .input_area small {
+.input_area label, .input_area small, .drop_down_area label, .drop_down_area small {
     font-family: "Istok Web";
     color: var(--gray);
     font-size: 16px;
@@ -209,31 +211,72 @@ h1 {
     margin-bottom: 7px;
 }
 
-.input_area small {
+.input_area small, .drop_down_area small {
     display: block;
     width: 178px;
     margin-top: 7px;
     font-size: 13px;
 }
 
-.input_area span {
+.input_area span, .drop_down_area span {
     font-size: 10px;
 }
 
-.input_area input {
+.input_area input, .drop_down_area .drop_down div {
     width: 218px;
+    max-width: calc(100% - 12px);
     height: 30px;
     padding: 0;
     padding-left: 12px;
     border-width: 0;
     border-radius: 7px;
-    box-shadow: inset 1px 1px 0 #ABABAB, inset -1px -1px 0 #ABABAB;
+    box-shadow: inset 1px 1px 0 #ABABAB, inset -1px -1px 0 #ABABAB, inset 1px -1px 0 #ABABAB, inset -1px 1px 0 #ABABAB;
 }
 
-.input_area input::placeholder {
+.input_area input {
+    min-width: 218px;
+    width: 100%;
+}
+
+.drop_down_area .drop_down {
+    position: relative;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+
+.drop_down_area .drop_down div {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    justify-content: space-between;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: white;
+}
+
+.drop_down_area .drop_down div:first-child {
+    display: flex;
+    position: static;
+    border-radius: 7px 7px 7px 7px;
+}
+
+.drop_down_area .drop_down div:last-child {
+    border-radius: 0 0 7px 7px;
+}
+
+.drop_down_area img {
+    width: 8px;
+    margin-right: 11px;
+    transform: rotate(180deg);
+}
+
+.input_area input::placeholder, .drop_down_area p {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 400;
+    color: #ABABAB;
 }
 
 .shadow {

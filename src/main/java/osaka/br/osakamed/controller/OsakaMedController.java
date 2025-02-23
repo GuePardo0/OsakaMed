@@ -37,4 +37,19 @@ public class OsakaMedController {
 	public String login() {
 		return "login";
 	}
+
+	@GetMapping("/perfil")
+	public String perfil() {
+		return "perfil";
+	}
+
+	@GetMapping("/consultas-do-dia")
+	public String consultasDoDia() {
+		return "consultas-do-dia";
+	}
+
+	@GetMapping("/minhas-avaliacoes")
+	public String minhasAvaliacoes() {
+		return "minhas-avaliacoes";
+	}
 }

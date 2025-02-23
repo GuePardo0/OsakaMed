@@ -1,0 +1,3 @@
+0000;Joãozinho GamePlays;1234;Cardiologista;Essencial
+0001;Doutor Edilberto;9876;Urologista;Plus
+0002;Ayumu Osaka Kasuga;5678;Otorrinolaringologista;Não possui

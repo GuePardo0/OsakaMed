@@ -3,66 +3,110 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Page Title</title>
+        <title>OsakaMed</title>
+        <link rel="icon" type="image/x-icon" th:href="@{/assets/icon.png}">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' href='' th:href="@{/reset.css}">
-        <link rel='stylesheet' href='' th:href="@{/start_style.css}">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='' th:href="@{/osakamed_style.css}">
+        <link rel='stylesheet' href='' th:href="@{/especialistas.css}">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header class="start_header">
+        <div id="perfil_popup_box" class="popup_box inactive"></div>
+        <div id="perfil_popup" class="perfil popup inactive">
+            <a href="perfil">
+                <div>
+                    <img th:src="@{/assets/perfil.png}" alt="">
+                    <p>Perfil</p>
+                </div>
+            </a>
+            <a id="perfil_sair">
+                <div>
+                    <img th:src="@{/assets/sair.png}" alt="">
+                    <p>Sair</p>
+                </div>
+            </a>
+        </div>
+
+        <header class="main_header">
             <div class="header_div">
                 <div class="left_side">
                     <a class="logo" href="/osakamed/">
                         <img class="logo" th:src="@{/assets/logo.png}" alt="">
                     </a>
-                    <button class="espaco">
-                        <p>Notícias</p>
-                    </button>
-                    <button class="espaco">
-                        <p>Pesquisa de Satisfação</p>
-                    </button>
-                    <button class="espaco" style="justify-content: center;">
-                        <p style="width: 150px;">Consulta Virtual</p>
-                    </button>
+                    <p class="title">Verificar médicos</p>
                 </div>
                 <div class="right_side">
-                    <button class="sidebar_button">
-                        <div></div>
-                        <div></div>
-                        <div style="margin-bottom: 0px;"></div>
+                    <button class="square_button">
+                        <img th:src="@{/assets/sino.png}" alt="">
                     </button>
-                    <button class="login">
-                        <a href="login">
-                            <p>Login</p>
-                            <img th:src="@{/assets/user.png}" alt="">
-                        </a>
+                    <button id="perfil_popup_botao" class="small_margin_left square_button">
+                        <img th:src="@{/assets/user.png}" alt="">
                     </button>
                 </div>
             </div>
         </header>
+
         <div class="content">
-            <div class="sobre">
-                <a href="consultas">
-                    <img th:src="@{/assets/agendar_consulta.png}" alt="Agendar consultas">
-                    <p>Agendar novas consultas</p>
-                </a>
-                <a href="planos">
-                    <img th:src="@{/assets/plano_de_saude.png}" alt="Plano de saúde">
-                    <p>Conheça os nossos planos de saúde</p>
-                </a>
-                <a href="minhas-consultas">
-                    <img th:src="@{/assets/minhas_consultas.png}" alt="Minhas consultas">
-                    <p>Minhas consultas</p>
-                </a>
-            </div>
-            <div class="images">
-                
+            <div class="pink_background small_margin_top medium_margin_bottom" style="height: 625px;">
+                <div class="big_box">
+                    <div class="right">
+                        <div class="input_area" style="margin-bottom: 7px;">
+                            <div class="div">
+                                <label>Digite o nome do(a) médico(a):</label>
+                                <input type="text" placeholder="Nome...">
+                            </div>
+                        </div>
+                        <div id="medicos_display" class="medicos_display"></div>
+                    </div>
+
+                    <div class="left drop_down_area">
+                        <div class="drop_down_div" style="width: 60%;">
+                            <label for="">Escolha a especialidade do médico(a):</label>
+                            <div data-removefirstelement="false" class="drop_down">
+                                <div data-id="0" class="drop_down_ativador">
+                                    <p>Todas</p>
+                                    <img th:src="@{/assets/seta.png}" alt="">
+                                </div>
+                                <div data-id="1">
+                                    <p>Cardiologista</p>
+                                </div>
+                                <div data-id="2">
+                                    <p>Urologista</p>
+                                </div>
+                                <div data-id="3">
+                                    <p>Otorrinolaringologista</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="drop_down_div" style="width: 30%;">
+                            <label for="">Escolha o plano:</label>
+                            <div data-removeFirstElement="true" class="drop_down">
+                                <div data-id="0" class="drop_down_ativador">
+                                    <p>Plano</p>
+                                    <img th:src="@{/assets/seta.png}" alt="">
+                                </div>
+                                <div data-id="1">
+                                    <p>Essencial</p>
+                                </div>
+                                <div data-id="2">
+                                    <p>Plus</p>
+                                </div>
+                                <div data-id="3">
+                                    <p>Premium</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <footer class="start_footer">
+
+        <footer class="main_footer">
             <p>OsakaMed | 2025 - © Todos os direitos reservados</p>
         </footer>
     </body>
-    <script th:src="@{/script.js}"></script>
+    <script th:src="@{/especialistas.js}"></script>
+    <script th:src="@{/drop_down.js}"></script>
+    <script th:src="@{/popup_perfil.js}"></script>
 </html>

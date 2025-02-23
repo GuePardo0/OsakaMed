@@ -1,22 +1,8 @@
-/* ===> Important ===> */
-
-:root {
-    --primary: #FFCBEB;
-    --secondary: #FFA7DF;
-    --border: #E3BED5;
-    --accent: #FFF0F9;
-    --gray: #595959;
-    --dark_pink: #FF6BC9;
+.big_box {
+    width: 80.556%;
+    height: 100%;
+    padding: 0;
 }
-
-@font-face {
-    font-family: 'HermeneusOne';
-    src: url('/fonts/HermeneusOne-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-/* <--- Important <--- */
 
 .login_header {
     position: absolute;

@@ -1,16 +1,26 @@
 package osaka.br.osakamed.model;
 
 public class Medico {
+    private String CRM;
     private String nome;
     private String senha;
     private String especialidade;
     private String planoDeSaude;
 
-    public Medico(String nome, String senha, String especialidade, String planoDeSaude) {
+    public Medico(String CRM, String nome, String senha, String especialidade, String planoDeSaude) {
+        this.CRM = CRM;
         this.nome = nome;
         this.senha = senha;
         this.especialidade = especialidade;
         this.planoDeSaude = planoDeSaude;
+    }
+
+    public String getCRM() {
+        return CRM;
+    }
+
+    public void setCRM(String CRM) {
+        this.CRM = CRM;
     }
 
     public String getNome() {
@@ -44,5 +54,4 @@ public class Medico {
     public void setPlanoDeSaude(String planoDeSaude) {
         this.planoDeSaude = planoDeSaude;
     }
-
 }

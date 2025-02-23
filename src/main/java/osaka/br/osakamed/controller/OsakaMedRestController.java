@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import osaka.br.osakamed.model.Medico;
 import osaka.br.osakamed.model.Usuario;
 import osaka.br.osakamed.service.OsakaMedService;
 
@@ -22,6 +23,7 @@ public class OsakaMedRestController {
     public OsakaMedRestController(OsakaMedService server) {
         this.server = server;
         server.lerUsuarios();
+        server.lerMedicos();
     }
 
     @PostMapping
@@ -33,5 +35,10 @@ public class OsakaMedRestController {
     @GetMapping("/getusuarios")
     public ArrayList<Usuario> getUsuarios() {
         return server.getUsuarios();
+    }
+
+    @GetMapping("/getmedicos")
+    public ArrayList<Medico> getMedicos() {
+        return server.getMedicos();
     }
 }

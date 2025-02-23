@@ -3,68 +3,154 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Page Title</title>
+        <title>OsakaMed</title>
+        <link rel="icon" type="image/x-icon" th:href="@{/assets/icon.png}">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' href='' th:href="@{/reset.css}">
-        <link rel='stylesheet' href='' th:href="@{/style.css}">
+        <link rel='stylesheet' href='' th:href="@{/osakamed_style.css}">
+        <link rel='stylesheet' href='' th:href="@{/perfil.css}">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
+        <div id="perfil_popup_box" class="popup_box inactive"></div>
+        <div id="perfil_popup" class="perfil popup inactive">
+            <a href="perfil">
+                <div>
+                    <img th:src="@{/assets/perfil.png}" alt="">
+                    <p>Perfil</p>
+                </div>
+            </a>
+            <a id="perfil_sair">
+                <div>
+                    <img th:src="@{/assets/sair.png}" alt="">
+                    <p>Sair</p>
+                </div>
+            </a>
+        </div>
+
+        <header class="main_header">
             <div class="header_div">
                 <div class="left_side">
                     <a class="logo" href="/osakamed/">
                         <img class="logo" th:src="@{/assets/logo.png}" alt="">
                     </a>
-                    <button class="espaco">
-                        <p>Notícias</p>
-                    </button>
-                    <button class="espaco">
-                        <p>Pesquisa de Satisfação</p>
-                    </button>
-                    <button class="espaco" style="justify-content: center;">
-                        <p style="width: 150px;">Consulta Virtual</p>
-                    </button>
+                    <p class="title">Meu perfil</p>
                 </div>
                 <div class="right_side">
-                    <button class="sidebar_button">
-                        <div></div>
-                        <div></div>
-                        <div style="margin-bottom: 0px;"></div>
+                    <button class="square_button">
+                        <img th:src="@{/assets/sino.png}" alt="">
                     </button>
-                    <button class="login">
-                        <a href="login">
-                            <p>Login</p>
-                            <img th:src="@{/assets/user.png}" alt="">
-                        </a>
+                    <button id="perfil_popup_botao" class="small_margin_left square_button">
+                        <img th:src="@{/assets/user.png}" alt="">
                     </button>
                 </div>
             </div>
         </header>
+
         <div class="content">
-            <div class="sobre">
-                <a href="consultas">
-                    <img th:src="@{/assets/agendar_consulta.png}" alt="Agendar consultas">
-                    <p>Agendar novas consultas</p>
-                </a>
-                <a href="planos">
-                    <img th:src="@{/assets/plano_de_saude.png}" alt="Plano de saúde">
-                    <p>Conheça os nossos planos de saúde</p>
-                </a>
-                <a href="especialistas">
-                    <img th:src="@{/assets/especialista.png}" alt="Médicos">
-                    <p>Encontre os nossos especialistas aqui</p>
-                </a>
-                <a href="minhas-consultas">
-                    <img th:src="@{/assets/minhas_consultas.png}" alt="Minhas consultas">
-                    <p>Minhas consultas</p>
-                </a>
-            </div>
-            <div class="images">
-                
+            <div class="pink_background small_margin_top medium_margin_bottom" style="height: 625px;">
+                <div class="big_box">
+                    <div class="region">
+                        <div class="image">
+                            <img th:src="@{/assets/perfil_padrao_user.png}" alt="">
+                            <div></div>
+                            <button class="button edit">
+                                <img th:src="@{/assets/lapis.png}" alt="">
+                            </button>
+                        </div>
+                        <div>
+                            <p id="nome">Nome:</p>
+                            <p id="idade">Idade:</p>
+                            <p id="especialidade">Especialidade:</p>
+                            <p id="crm">CRM:</p>
+                        </div>
+                    </div>
+                    <div class="button_area">
+                        <button class="button" style="width: 161px;" onclick="vocetemcerteza()">
+                            <img th:src="@{/assets/xis.png}" alt="">
+                            <p>Excluir conta</p>
+                        </button>
+                        <button class="button" style="width: 94px;" onclick="perfil_sair()">
+                            <img th:src="@{/assets/sair.png}" alt="">
+                            <p>Sair</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="big_box" style="position: relative;">
+                    <div class="plano_div">
+                        <h1 style="font-weight: 700; font-size: 48px; margin-bottom: 17px;">Seu plano:</h1>
+                        <div id="nao_possui" class="plano">
+                            <div class="imagem">
+                                <img th:src="@{/assets/coração.png}" alt="">
+                            </div>
+                            <div class="texto">
+                                <h1>Não possui</h1>
+                                <div></div>
+                                <p>Você não possui nenhum plano.</p>
+                            </div>
+                        </div>
+                        <div id="plano_essencial" class="plano">
+                            <div class="imagem">
+                                <img th:src="@{/assets/plano_essencial.png}" alt="">
+                            </div>
+                            <div class="texto">
+                                <h1>Plano Essencial</h1>
+                                <div></div>
+                                <p><span>●</span> Exames laboratoriais e de imagem básicos.<br><span>●</span> Atendimento em ambulatório e pronto-socorro.<br><span>●</span> Internações apenas em enfermaria.<br><span>●</span> Cobertura regional.<span>●</span> Consultas com clínico geral e especialistas credenciados.</p>
+                            </div>
+                        </div>
+                        <div id="plano_plus" class="plano">
+                            <div class="imagem">
+                                <img th:src="@{/assets/plano_plus.png}" alt="">
+                            </div>
+                            <div class="texto">
+                                <h1>Plano Plus</h1>
+                                <div></div>
+                                <p><span>●</span> Tudo do Plano Essencial +<br><span>●</span> Atendimento nacional.<br><span>●</span> Internação em apartamento privativo.<br><span>●</span> Exames e procedimentos de alta complexidade.<br><span>●</span> Maior rede de especialistas credenciados.</p>
+                            </div>
+                        </div>
+                        <div id="plano_premium" class="plano">
+                            <div class="imagem">
+                                <img th:src="@{/assets/plano_premium.png}" alt="">
+                            </div>
+                            <div class="texto">
+                                <h1>Plano Premium</h1>
+                                <div></div>
+                                <p><span>●</span> Tudo do Plano Plus +<br><span>●</span> Atendimento internacional.<br><span>●</span> Internações em suítes hospitalares.<br><span>●</span> Telemedicina 24h<br><span>●</span> Check-ups completos anuais.<br><span>●</span> Atendimento odontológico incluso.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alterar_senha">
+                        <p></p>
+                        <div class="input_area">
+                            <div class="div">
+                                <label for="">Digite sua senha atual</label>
+                                <input type="password" placeholder="Senha...">
+                            </div>
+                            <div class="div"></div>
+                            <div class="div">
+                                <label for="">Digite a nova senha</label>
+                                <input type="password" placeholder="Senha...">
+                                <p><small><b>Recomendamos que sua senha possua no mínimo:</b><br><span>●</span> Uma letra maiúscula<br><span>●</span> Uma letra minúscula<br><span>●</span> Um número<br><span>●</span> Um caractere especial:<br>@ $ ! * # ? &</small></p>
+                            </div>
+                            <div class="div">
+                                <label for="">Confirme a senha</label>
+                                <input type="password" placeholder="Senha...">
+                                <small style="color: #E76767;">As senhas estão diferentes, digite novamente</small>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="alterar_senha_button button">
+                        <p>Alterar senha</p>
+                    </button>
+                </div>
             </div>
         </div>
-        <footer>
+
+        <footer class="main_footer">
             <p>OsakaMed | 2025 - © Todos os direitos reservados</p>
         </footer>
     </body>
+    <script th:src="@{/perfil.js}"></script>
+    <script th:src="@{/popup_perfil.js}"></script>
 </html>

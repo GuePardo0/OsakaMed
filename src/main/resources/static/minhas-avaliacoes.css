@@ -1,0 +1,71 @@
+.big_box {
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.avaliacoes_display {
+    align-items: start;
+    width: 100%;
+    height: 90%;
+    border-width: 0;
+    border-radius: 7px;
+    box-shadow: inset 1px 1px 0 #ABABAB, inset -1px -1px 0 #ABABAB, inset 1px -1px 0 #ABABAB, inset -1px 1px 0 #ABABAB;
+    overflow-y: scroll;
+}
+
+.avaliacao {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    position: relative;
+    width: calc(100% - 20px);
+    padding: 10px;
+    box-shadow: inset 1px 1px 0 #ABABAB, inset -1px -1px 0 #ABABAB, inset 1px -1px 0 #ABABAB, inset -1px 1px 0 #ABABAB;
+}
+
+.avaliacao .imagem div {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    box-shadow: inset 1px 1px 0 #E3BED5, inset -1px -1px 0 #E3BED5, inset 1px -1px 0 #E3BED5, inset -1px 1px 0 #E3BED5;
+}
+
+.avaliacao img {
+    width: 50px;
+}
+
+.avaliacao p {
+    color: #ABABAB;
+}
+
+.avaliacao .dados {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 8px;
+    column-gap: 17px;
+    justify-content: space-between;
+    margin-left: 19px;
+}
+
+.estrelas {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    column-gap: 6px;
+    width: 104px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--secondary);
+}
+
+.estrelas img {
+    width: 12px;
+}
+
+.avaliacao span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ABABAB;
+    font-family: 'Inter', sans-serif;
+}

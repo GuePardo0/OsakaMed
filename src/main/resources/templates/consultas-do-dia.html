@@ -8,36 +8,21 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' href='' th:href="@{/reset.css}">
         <link rel='stylesheet' href='' th:href="@{/osakamed_style.css}">
-        <link rel='stylesheet' href='' th:href="@{/minhas-consultas.css}">
+        <link rel='stylesheet' href='' th:href="@{/consultas-do-dia.css}">
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div id="avaliar_popup_shadow" class="shadow inactive"></div>
-        <div id="avaliar_popup_box" class="popup_box inactive">
-            <div id="avaliar_popup" class="avaliar popup">
-                <h1>Por favor, avalie nosso profissional e nos conte sua experiência</h1>
-                <div class="estrelas">
-                    <img th:src="@{/assets/estrela_rosa.png}" alt="">
-                    <img th:src="@{/assets/estrela_rosa.png}" alt="">
-                    <img th:src="@{/assets/estrela_rosa.png}" alt="">
-                    <img th:src="@{/assets/estrela_branca.png}" alt="">
-                    <img th:src="@{/assets/estrela_branca.png}" alt="">
-                </div>
-                <label for="">Feedback:</label>
-                <textarea name="" id="" placeholder="Feedback..."></textarea>
-                <div class="div_botao">
+        <div id="realizar_popup_shadow" class="shadow inactive"></div>
+        <div id="realizar_popup_box" class="popup_box inactive">
+            <div id="realizar_popup" class="realizar popup">
+                <h1>Por favor, dê a descrição sobre o que aconteceu e a necessidade do paciente</h1>
+                <label for="descrição">Descrição da consulta:</label>
+                <textarea name="descrição" id="descrição" placeholder="Conte em detalhes o que houve durante a consulta (sintomas do paciente, tratamento sugerido, medicamentos, exames...)."></textarea>
+                <div>
                     <button class="button">
                         <p>ENVIAR DESCRIÇÃO</p>
                     </button>
                 </div>
-            </div>
-        </div>
-        <div id="descricao_popup_shadow" class="shadow inactive"></div>
-        <div id="descricao_popup_box" class="popup_box inactive">
-            <div id="descricao_popup" class="descricao popup">
-                <h1>Descrição do médico em relação a consulta realizada</h1>
-                <label for="">Descrição do: nome...</label>
-                <textarea name="" id="" placeholder="Descrição..."></textarea>
             </div>
         </div>
 
@@ -63,7 +48,7 @@
                     <a class="logo" href="/osakamed/">
                         <img class="logo" th:src="@{/assets/logo.png}" alt="">
                     </a>
-                    <p class="title">Minhas consultas</p>
+                    <p class="title">Consultas do dia</p>
                 </div>
                 <div class="right_side">
                     <button class="square_button">
@@ -79,7 +64,7 @@
         <div class="content">
             <div class="pink_background small_margin_top medium_margin_bottom" style="height: 625px;">
                 <div class="big_box">
-                    <h2>Aqui está todas as consultas marcadas e realizadas:</h2>
+                    <h2>Aqui estão todas as consultas do dia:</h2>
                     <div class="consultas_display">
                         <div class="consulta">
                             <div class="imagem">
@@ -88,23 +73,14 @@
                             </div>
                             <div class="dados">
                                 <p>Nome...</p>
-                                <p>Data da consulta: DD/MM</p>
-                                <div class="botoes_div">
-                                    <div></div>
-                                    <button class="realizar_popup_botao button">
-                                        <p>Pagar consulta</p>
-                                    </button>
-                                </div>
-                                <p>Especialidade...</p>
-                                <div></div>
-                                <div class="botoes_div">
-                                    <button class="descricao_popup_botao button">
-                                        <p>Descição do médico</p>
-                                    </button>
-                                    <button class="avaliar_popup_botao button">
-                                        <p>Avaliar consulta Cancelar consulta</p>
-                                    </button>
-                                </div>
+                                <p></p>
+                                <p>Idade...</p>
+                                <p>Plano...</p>
+                            </div>
+                            <div class="realizar_consulta_div">
+                                <button class="realizar_popup_botao button">
+                                    <p>Realizar Consulta</p>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -116,6 +92,6 @@
             <p>OsakaMed | 2025 - © Todos os direitos reservados</p>
         </footer>
     </body>
-    <script th:src="@{/minhas-consultas.js}"></script>
+    <script th:src="@{/consultas-do-dia.js}"></script>
     <script th:src="@{/popup_perfil.js}"></script>
 </html>

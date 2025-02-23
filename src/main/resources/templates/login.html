@@ -15,27 +15,111 @@
         <div id="cadastro_popup_shadow" class="shadow inactive"></div>
         <div id="cadastro_popup_box" class="popup_box inactive">
             <div id="cadastro_popup" class="cadastro popup">
-                <h1 class="color_gray" style="font-weight: 400; margin-bottom: 15.6%;">Por favor, preencha os campos abaixo para realizar o seu cadastro</h1>
-                <div class="input_area">
-                    <div>
+                <h1 class="color_gray" style="font-weight: 400; margin-bottom: 17px;">Por favor, preencha os campos abaixo para realizar o seu cadastro</h1>
+                <div style="align-items: start;">
+                    <p class="sou color_gray">Sou</p>
+                    <div class="drop_down_area" style="margin-bottom: 17px;">
+                        <div class="drop_down_div" style="width: 87px;">
+                            <div id="cadastro_drop_down" data-removefirstelement="false" class="drop_down">
+                                <div data-id="0" class="drop_down_ativador">
+                                    <p>Cliente</p>
+                                    <img th:src="@{/assets/seta.png}" alt="">
+                                </div>
+                                <div data-id="1">
+                                    <p>Médico</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input_area medico">
+                    <div class="div">
                         <label for="">Digite o seu nome</label>
-                        <input id="cadastro_nome" type="text" placeholder="Digite o seu nome">
-                        <p><small>Ele será usado como forma de login posteriormente</small></p>
+                        <input class="cadastro_nome" type="text" placeholder="Nome...">
+                        <small style="width: 100%;">Ele será usado como forma de login posteriormente</small>
                     </div>
-                    <div>
+                    <div class="div drop_down_area">
+                        <div class="drop_down_div">
+                            <label for="">Selecione sua especialidade</label>
+                            <div data-removefirstelement="true" class="drop_down">
+                                <div data-id="0" class="drop_down_ativador" style="flex-direction: row;">
+                                    <p class="cadastro_especialidade">Especialidades</p>
+                                    <img th:src="@{/assets/seta.png}" alt="">
+                                </div>
+                                <div data-id="1">
+                                    <p>Cardiologista</p>
+                                </div>
+                                <div data-id="2">
+                                    <p>Urologista</p>
+                                </div>
+                                <div data-id="3">
+                                    <p>Otorrinolaringologista</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div drop_down_area">
+                        <div class="drop_down_div">
+                            <label for="">Selecione o seu plano</label>
+                            <div data-removefirstelement="true" class="drop_down">
+                                <div data-id="0" class="drop_down_ativador" style="flex-direction: row;">
+                                    <p class="cadastro_plano">Planos</p>
+                                    <img th:src="@{/assets/seta.png}" alt="">
+                                </div>
+                                <div data-id="1">
+                                    <p>Essencial</p>
+                                </div>
+                                <div data-id="2">
+                                    <p>Plus</p>
+                                </div>
+                                <div data-id="3">
+                                    <p>Premium</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div">
+                        <label for="">Digite o seu CRM</label>
+                        <input class="cadastro_crm" type="text" placeholder="CRM ex: 000000">
+                    </div>
+                    <div class="div">
+                        <label for="">Crie sua senha</label>
+                        <input class="cadastro_senha" type="password" placeholder="Senha...">
+                        <small><b>Recomendamos que sua senha possua no mínimo:</b><br><span>●</span> Uma letra maiúscula<br><span>●</span> Uma letra minúscula<br><span>●</span> Um número<br><span>●</span> Um caractere especial:<br>@ $ ! * # ? &</small>
+                    </div>
+                    <div class="div">
+                        <label for="">Confirme a senha</label>
+                        <input class="cadastro_confirmar_senha" type="password" placeholder="Senha...">
+                        <small style="color: #E76767;">As senhas estão diferentes, digite novamente</small>
+                    </div>
+                    <div class="div"></div>
+                    <button id="cadastrar" class="button">
+                        <p>Cadastrar</p>
+                    </button>
+                </div>
+                
+                <div class="input_area usuario">
+                    <div class="div" style="grid-column: 1 / span 2;">
+                        <label for="">Digite o seu nome</label>
+                        <input class="cadastro_nome" type="text" placeholder="Nome...">
+                        <small style="width: 100%;">Ele será usado como forma de login posteriormente</small>
+                    </div>
+                    <div class="div" style="grid-column: 1 / span 2;">
                         <label for="">Digite a sua idade</label>
-                        <input id="cadastro_idade" type="text" placeholder="Digite a sua idade">
+                        <input class="cadastro_idade" type="text" placeholder="Idade...">
                     </div>
-                    <div>
-                        <label for="">Criei uma senha</label>
-                        <input id="cadastro_senha" type="password" placeholder="Digite a sua senha">
-                        <p></p><small><b>Recomendamos que sua senha possua no mínimo:</b><br><span>●</span> Uma letra maiúscula<br><span>●</span> Uma letra minúscula<br><span>●</span> Um número<br><span>●</span> Um caractere especial:<br>@ $ ! * # ? &</small></p>
+                    <div class="div">
+                        <label for="">Crie sua senha</label>
+                        <input class="cadastro_senha" type="password" placeholder="Senha...">
+                        <small><b>Recomendamos que sua senha possua no mínimo:</b><br><span>●</span> Uma letra maiúscula<br><span>●</span> Uma letra minúscula<br><span>●</span> Um número<br><span>●</span> Um caractere especial:<br>@ $ ! * # ? &</small>
                     </div>
-                    <div>
-                        <label for="">Digite o plano de saúde que atende</label>
-                        <input id="cadastro_plano" type="text" placeholder="Digite o plano de saúde">
+                    <div class="div">
+                        <label for="">Confirme a senha</label>
+                        <input class="cadastro_confirmar_senha" type="password" placeholder="Senha...">
+                        <small style="color: #E76767;">As senhas estão diferentes, digite novamente</small>
                     </div>
-                    <div></div>
+                    <div class="div"></div>
                     <button id="cadastrar" class="button">
                         <p>Cadastrar</p>
                     </button>
@@ -73,11 +157,11 @@
                     <div class="right">
                         <h1 class="small_margin_bottom_fixed">Acesse sua conta</h1>
                         <div class="input_area">
-                            <div>
+                            <div class="div">
                                 <label for="">LOGIN</label>
                                 <input id="login_nome" type="text" placeholder="Digite o seu nome">
                             </div>
-                            <div>
+                            <div class="div">
                                 <label for="">SENHA</label>
                                 <input id="login_senha" type="password" placeholder="Digite a sua senha">
                             </div>
@@ -93,5 +177,6 @@
 
         <div class="content" id="content"></div>
     </body>
+    <script th:src="@{/drop_down.js}"></script>
     <script th:src="@{/login.js}"></script>
 </html>
