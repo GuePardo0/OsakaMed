@@ -5,8 +5,8 @@ public class Consulta {
     private int idUser;
     private int nota;
     private String data;
-    private String CRM;
-    private String avaliacao;
+    private String crm;
+    private String descricao;
     private String status;
 
     public int getNota() {
@@ -17,12 +17,12 @@ public class Consulta {
         this.nota = nota;
     }
 
-    public String getAvaliacao() {
-        return avaliacao;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setAvaliacao(String avaliacao) {
-        this.avaliacao = avaliacao;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public int getIdUser() {
@@ -49,12 +49,12 @@ public class Consulta {
         this.data = data;
     }
 
-    public String getCRM() {
-        return CRM;
+    public String getCrm() {
+        return crm;
     }
 
-    public void setCRM(String CRM) {
-        this.CRM = CRM;
+    public void setCrm(String crm) {
+        this.crm = crm;
     }
 
     public String getStatus() {

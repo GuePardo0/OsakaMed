@@ -1,1 +1,4 @@
-0;0;01/01/2001;0001;Cardiologista;Essencial;finalizada
+1;1;0;2025-02-25;0010;null;aguardando
+2;1;0;2025-02-24;0010;Paciente curado;concluída
+3;1;0;2025-02-25;0010;null;aguardando
+4;1;0;2025-02-24;0010;null;aguardando

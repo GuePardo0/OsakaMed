@@ -16,10 +16,10 @@
         <div id="realizar_popup_box" class="popup_box inactive">
             <div id="realizar_popup" class="realizar popup">
                 <h1>Por favor, dê a descrição sobre o que aconteceu e a necessidade do paciente</h1>
-                <label for="descrição">Descrição da consulta:</label>
-                <textarea name="descrição" id="descrição" placeholder="Conte em detalhes o que houve durante a consulta (sintomas do paciente, tratamento sugerido, medicamentos, exames...)."></textarea>
+                <label for="descricao">Descrição da consulta:</label>
+                <textarea name="descricao" id="descricao" placeholder="Conte em detalhes o que houve durante a consulta (sintomas do paciente, tratamento sugerido, medicamentos, exames...)."></textarea>
                 <div>
-                    <button class="button">
+                    <button id="enviar_descricao" class="button">
                         <p>ENVIAR DESCRIÇÃO</p>
                     </button>
                 </div>
@@ -65,25 +65,7 @@
             <div class="pink_background small_margin_top medium_margin_bottom" style="height: 625px;">
                 <div class="big_box">
                     <h2>Aqui estão todas as consultas do dia:</h2>
-                    <div class="consultas_display">
-                        <div class="consulta">
-                            <div class="imagem">
-                                <img src="/assets/perfil_padrao_medico.png" alt="">
-                                <div></div>
-                            </div>
-                            <div class="dados">
-                                <p>Nome...</p>
-                                <p></p>
-                                <p>Idade...</p>
-                                <p>Plano...</p>
-                            </div>
-                            <div class="realizar_consulta_div">
-                                <button class="realizar_popup_botao button">
-                                    <p>Realizar Consulta</p>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="consultas_display" class="consultas_display"></div>
                 </div>
             </div>
         </div>

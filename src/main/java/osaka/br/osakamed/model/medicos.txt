@@ -8,7 +8,8 @@
 0007;Ayumu Osaka Kasuga;5678;Otorrinolaringologista;Plus
 0008;Tiago sem T;12345678;Sexologista;Premium
 0009;Pereira;5678;Otorrinolaringologista;Premium
-0010;Pedro;12345678;Psiquiatra;Essencial
+0010;Pedro;1234;Psiquiatra;Essencial
 0011;Takamasa Nomuru;1234;Cardiologista;Essencial
 0012;Tomás de Costa;12345678;Psiquiatra;Não possui
 0013;Maria;12345678;Pneumologista;Plus
+0031;Gui;rtm26;Pneumologista;Plus

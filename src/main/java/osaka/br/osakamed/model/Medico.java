@@ -3,23 +3,19 @@ package osaka.br.osakamed.model;
 import java.util.ArrayList;
 
 public class Medico {
-    private String CRM;
+    private String crm;
     private String nome;
     private String senha;
     private String especialidade;
     private String planoDeSaude;
     private ArrayList<Consulta> consultas = new ArrayList<>();
 
-    public void setConsultas(ArrayList<Consulta> consultas) {
-        this.consultas = consultas;
+    public String getCrm() {
+        return crm;
     }
 
-    public String getCRM() {
-        return CRM;
-    }
-
-    public void setCRM(String CRM) {
-        this.CRM = CRM;
+    public void setCrm(String crm) {
+        this.crm = crm;
     }
 
     public String getNome() {
@@ -52,5 +48,9 @@ public class Medico {
 
     public void setPlanoDeSaude(String planoDeSaude) {
         this.planoDeSaude = planoDeSaude;
+    }
+
+    public ArrayList<Consulta> getConsultas() {
+        return consultas;
     }
 }

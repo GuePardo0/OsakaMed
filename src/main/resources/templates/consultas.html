@@ -54,32 +54,32 @@
                         <div class="input_area">
                             <div class="div">
                                 <label for="">Nome do(a) médico(a):</label>
-                                <input type="text" placeholder="Nome...">
+                                <input id="nome_medico" type="text" placeholder="Nome...">
                             </div>
                             <div class="div">
                                 <label for="">Escolha o dia ideal para sua consulta:</label>
-                                <input type="date" style="width: 257.45px;">
+                                <input id="data" type="date" style="width: 257.45px;">
                             </div>
                             <div class="div">
                                 <label for="">Especialidade do médico(a):</label>
-                                <input type="text" placeholder="Idade...">
-                                <small style="color: #E76767; width: 225px;">Os dados do médico não conferem ou não existem, por favor tente novamente.</small>
+                                <input id="especialidade" type="text" placeholder="Especialidade...">
+                                <small id="error" style="display: none; color: #E76767; width: 225px;">Os dados do médico não conferem ou não existem, por favor tente novamente.</small>
                             </div>
                         </div>
                         <div class="status">
                             <h1 class="color_gray">Status do dia escolhido:</h1>
-                            <p style="color: #ABABAB;">O dia ainda não foi selecionado, escolha para verificar seu status.</p>
-                            <p style="color: #2BA70C;">O dia escolhido está livre, quando confirmar você será agendado para este dia.</p>
-                            <p style="color: #F28100;">O dia escolhido está lotado, logo você ficará na lista de espera. Caso haja desistência você ocupará o lugar.</p>
+                            <p id="dia_nenhum" style="color: #ABABAB;">O dia ainda não foi selecionado, escolha para verificar seu status.</p>
+                            <p id="dia_livre" style="display: none; color: #2BA70C;">O dia escolhido está livre, quando confirmar você será agendado para este dia.</p>
+                            <p id="dia_lotado" style="display: none; color: #F28100;">O dia escolhido está lotado, logo você ficará na lista de espera. Caso haja desistência você ocupará o lugar.</p>
                         </div>
                     </div>
                     <div class="bottom">
-                        <p>Por favor, preencha todos os campos para continuar.</p>
+                        <p style="color: #595959;">Por favor, preencha todos os campos para continuar.</p>
                         <div style="width: 420px;">
                             <button class="button">
                                 <p>Cancelar agendamento</p>
                             </button>
-                            <button class="button" style="margin-left: 20px;">
+                            <button id="confirmar_agendamento" class="button" style="margin-left: 20px;">
                                 <p>Confirmar Agendamento</p>
                             </button>
                         </div>

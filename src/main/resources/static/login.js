@@ -102,10 +102,10 @@ function cadastrar() {
             error_element.style.color = "#2BA70C";
             error_element.innerText = "Cadastro realizado com sucesso!";
             data = {
-                nome: nome.value,
-                senha: senha.value,
-                idade: Number(idade.value),
-                planoDeSaude: "Não possui"
+                "nome": nome.value,
+                "senha": senha.value,
+                "idade": Number(idade.value),
+                "planoDeSaude": "Não possui"
             }
             fetch(`${url}/add-usuario`, {
                 method: 'POST',
@@ -114,6 +114,18 @@ function cadastrar() {
                 },
                 body: JSON.stringify(data)
             });
+            fetch(`${url}/get-usuarios`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(usuarios => {
+                let usuario = usuarios[usuarios.length - 1];
+                localStorage.setItem("user_id", usuario.id + 1);
+                localStorage.setItem("user_is_doc", false);
+            })
             window.location.href = "/osakamed/";
         }
     }
@@ -131,11 +143,11 @@ function cadastrar() {
             error_element.style.color = "#2BA70C";
             error_element.innerText = "Cadastro realizado com sucesso!";
             data = {
-                crm: crm.value,
-                nome: nome.value,
-                senha: senha.value,
-                especialidade: especialidade.innerText,
-                planoDeSaude: plano.innerText
+                "crm": crm.value,
+                "nome": nome.value,
+                "senha": senha.value,
+                "especialidade": especialidade.innerText,
+                "planoDeSaude": plano.innerText
             }
             fetch(`${url}/add-medico`, {
                 method: 'POST',
@@ -144,6 +156,9 @@ function cadastrar() {
                 },
                 body: JSON.stringify(data)
             });
+            localStorage.setItem("user_id", crm.value);
+            localStorage.setItem("user_is_doc", true);
+            window.location.href = "/osakamed/";
         }
     }
 }

@@ -1,11 +1,14 @@
 package osaka.br.osakamed.model;
 
+import java.util.ArrayList;
+
 public class Usuario {
     private int id;
     private String nome;
     private String senha;
     private int idade;
     private String planoDeSaude;
+    private ArrayList<Consulta> consultas = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -45,5 +48,9 @@ public class Usuario {
 
     public void setPlanoDeSaude(String planoDeSaude) {
         this.planoDeSaude = planoDeSaude;
+    }
+
+    public ArrayList<Consulta> getConsultas() {
+        return consultas;
     }
 }

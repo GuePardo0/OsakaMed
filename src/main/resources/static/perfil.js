@@ -196,8 +196,8 @@ function alterar_senha() {
                     senha_atual.value = "";
                     nova_senha.value = "";
                     confirmar_senha.value = "";
+                    break;
                 }
-                break;
             }
         })
     } else {
@@ -209,8 +209,47 @@ function alterar_senha() {
         })
         .then(response => response.json())
         .then(medicos => {
+            let error = document.getElementById("error");
+            let senha_atual = document.getElementById("senha_atual");
+            let nova_senha = document.getElementById("nova_senha");
+            let confirmar_senha = document.getElementById("confirmar_senha");
             for (let i = 0; i < medicos.length; i++) {
-                if (Number(medicos[i].crm) == user_id) {
+                if (medicos[i].crm == user_id) {
+                    let medico = medicos[i];
+                    if (senha_atual.value == "" || nova_senha.value == "" || confirmar_senha.value == "") {
+                        error.style.display = "flex";
+                        error.style.color = "#E76767";
+                        error.innerText = "Por favor, digite uma senha.";
+                    } else if (senha_atual.value != medico.senha) {
+                        error.style.display = "flex";
+                        error.style.color = "#E76767";
+                        error.innerText = "Senha incorreta. Tente novamente.";
+                    }
+                    else if (nova_senha.value != confirmar_senha.value) {
+                        error.style.display = "flex";
+                        error.style.color = "#E76767";
+                        error.innerText = "As senhas estão diferentes. Tente novamente.";
+                    } else {
+                        error.style.display = "flex";
+                        error.style.color = "#2BA70C";
+                        error.innerText = "Senha alterada com sucesso!";
+                        let data = {
+                            "id": user_id,
+                            "is_medico": user_is_doc,
+                            "nova_senha": nova_senha.value
+                        }
+                        fetch(`${url}/alterar-senha`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        });
+                    }
+                    senha_atual.value = "";
+                    nova_senha.value = "";
+                    confirmar_senha.value = "";
+                    break;
                 }
             }
         })

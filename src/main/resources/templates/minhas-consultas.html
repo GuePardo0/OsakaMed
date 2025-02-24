@@ -27,7 +27,7 @@
                 <textarea name="" id="" placeholder="Feedback..."></textarea>
                 <div class="div_botao">
                     <button class="button">
-                        <p>ENVIAR DESCRIÇÃO</p>
+                        <p>ENVIAR FEEDBACK</p>
                     </button>
                 </div>
             </div>
@@ -36,8 +36,8 @@
         <div id="descricao_popup_box" class="popup_box inactive">
             <div id="descricao_popup" class="descricao popup">
                 <h1>Descrição do médico em relação a consulta realizada</h1>
-                <label for="">Descrição do: nome...</label>
-                <textarea name="" id="" placeholder="Descrição..."></textarea>
+                <label id="nome_do_medico" for="">Descrição de:</label>
+                <textarea readonly name="" id="descricao" placeholder="Descrição..."></textarea>
             </div>
         </div>
 
@@ -80,34 +80,7 @@
             <div class="pink_background small_margin_top medium_margin_bottom" style="height: 625px;">
                 <div class="big_box">
                     <h2>Aqui está todas as consultas marcadas e realizadas:</h2>
-                    <div class="consultas_display">
-                        <div class="consulta">
-                            <div class="imagem">
-                                <img src="/assets/perfil_padrao_medico.png" alt="">
-                                <div></div>
-                            </div>
-                            <div class="dados">
-                                <p>Nome...</p>
-                                <p>Data da consulta: DD/MM</p>
-                                <div class="botoes_div">
-                                    <div></div>
-                                    <button class="realizar_popup_botao button">
-                                        <p>Pagar consulta</p>
-                                    </button>
-                                </div>
-                                <p>Especialidade...</p>
-                                <div></div>
-                                <div class="botoes_div">
-                                    <button class="descricao_popup_botao button">
-                                        <p>Descição do médico</p>
-                                    </button>
-                                    <button class="avaliar_popup_botao button">
-                                        <p>Avaliar consulta Cancelar consulta</p>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="consultas_display" class="consultas_display"></div>
                 </div>
             </div>
         </div>

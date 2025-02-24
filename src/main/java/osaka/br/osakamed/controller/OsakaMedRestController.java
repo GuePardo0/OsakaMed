@@ -63,6 +63,14 @@ public class OsakaMedRestController {
         return ResponseEntity.ok().build();
     }
 
+    @PostMapping("/enviar-descricao-consulta")
+    public ResponseEntity<Void> enviarDescricaoConsulta(@RequestBody Map<String, Object> payload) {
+        String descricao = (String) payload.get("descricao");
+        int idConsulta = (int) payload.get("id_consulta");
+        server.enviarDescricaoConsulta(descricao, idConsulta);
+        return ResponseEntity.ok().build();
+    }
+
     @PostMapping("/alterar-plano")
     public ResponseEntity<Void> alterarPlano(@RequestBody Map<String, Object> payload) {
         int id_usuario = (int) payload.get("id");
@@ -83,12 +91,12 @@ public class OsakaMedRestController {
     public ResponseEntity<Void> alterarSenha(@RequestBody Map<String, Object> payload) {
         boolean isMedico = (boolean) payload.get("is_medico");
         if (isMedico) {
-            String CRM_medico = (String) payload.get("id");
-            String senha = (String) payload.get("senha");
+            int CRM_medico = (int) payload.get("id");
+            String senha = (String) payload.get("nova_senha");
             ArrayList<Medico> medicos = server.getMedicos();
             Medico medico = new Medico();
             for (int i = 0; i < medicos.size(); i++) {
-                if (Objects.equals(medicos.get(i).getCRM(), CRM_medico)) {
+                if (Integer.parseInt(medicos.get(i).getCrm()) == CRM_medico) {
                     medico = medicos.get(i);
                     break;
                 }
@@ -96,7 +104,7 @@ public class OsakaMedRestController {
             server.alterarSenhaMed(medico, senha);
         } else {
             int id_usuario = (int) payload.get("id");
-            String senha = (String) payload.get("senha");
+            String senha = (String) payload.get("nova_senha");
             ArrayList<Usuario> usuarios = server.getUsuarios();
             Usuario usuario = new Usuario();
             for (int i = 0; i < usuarios.size(); i++) {
@@ -112,7 +120,7 @@ public class OsakaMedRestController {
 
     @PostMapping("/excluir-conta")
     public ResponseEntity<Void> excluirConta(@RequestBody Map<String, Object> payload) {
-        boolean isMedico = (boolean) payload.get("isMedico");
+        boolean isMedico = (boolean) payload.get("is_medico");
         if (isMedico) {
             String CRM_medico = (String) payload.get("id");
             server.excluirMedico(CRM_medico);
