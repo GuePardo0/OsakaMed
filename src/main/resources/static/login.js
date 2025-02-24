@@ -1,5 +1,4 @@
 const url = 'http://localhost:8080/api/osakamed';
-let data = {}
 
 // interface changes
 let header = document.getElementById("login_header");
@@ -19,7 +18,7 @@ nome_senha_invalidos.innerText = "";
 function login() {
     let nome = document.getElementById("login_nome");
     let senha = document.getElementById("login_senha");
-    fetch(`${url}/getusuarios`, {
+    fetch(`${url}/get-usuarios`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -37,7 +36,7 @@ function login() {
             }
         }
         if (usuario_invalido) {
-            fetch(`${url}/getmedicos`, {
+            fetch(`${url}/get-medicos`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -70,27 +69,67 @@ function login() {
 document.getElementById("login").addEventListener("click", login);
 
 // sign up script
+let cadastrar_element = document.getElementsByClassName("cadastrar");
 function cadastrar() {
-    let is_medico = 0;
-    if (cadastro_drop_down.children[0].innerText != "Médico") {
-        is_medico = 1;
+    let is_cliente = 0;
+    if (cadastro_drop_down.children[0].innerText == "Cliente") {
+        is_cliente = 1;
     }
-    let nome = document.getElementsByClassName("cadastro_nome")[is_medico];
+    let nome = document.getElementsByClassName("cadastro_nome")[is_cliente];
     let idade = document.getElementsByClassName("cadastro_idade")[0];
     let plano = document.getElementsByClassName("cadastro_plano")[0];
     let especialidade = document.getElementsByClassName("cadastro_especialidade")[0];
     let crm = document.getElementsByClassName("cadastro_crm")[0];
-    let senha = document.getElementsByClassName("cadastro_senha")[is_medico];
-    let confirmar_senha = document.getElementsByClassName("cadastro_confirmar_senha")[is_medico];
-    if (senha.value == confirmar_senha.value) {
-        if (is_medico == 1) {
+    let senha = document.getElementsByClassName("cadastro_senha")[is_cliente];
+    let confirmar_senha = document.getElementsByClassName("cadastro_confirmar_senha")[is_cliente];
+    let error_element = document.getElementsByClassName("error")[is_cliente];
+    let data = {};
+    if (is_cliente == 1) {
+        if (nome.value == "" || idade.value == "" || senha.value == "" || confirmar_senha.value == "") {
+            error_element.style.display = "flex";
+            error_element.style.color = "#E76767";
+            error_element.innerText = "Por favor, preencha todos os campos.";
+        } else if (senha.value != confirmar_senha.value) {
+            error_element.style.display = "flex";
+            error_element.style.color = "#E76767";
+            error_element.innerText = "As senhas estão diferentes. Tente novamente.";
+        } else if (isNaN(Number(idade.value))) {
+            error_element.style.display = "flex";
+            error_element.style.color = "#E76767";
+            error_element.innerText = "Você digitou uma idade inválida. Tente novamente.";
+        } else {
+            error_element.style.display = "flex";
+            error_element.style.color = "#2BA70C";
+            error_element.innerText = "Cadastro realizado com sucesso!";
             data = {
                 nome: nome.value,
                 senha: senha.value,
-                idade: Number(idade.value)
+                idade: Number(idade.value),
+                planoDeSaude: "Não possui"
             }
+            fetch(`${url}/add-usuario`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            window.location.href = "/osakamed/";
         }
-        else {
+    }
+    else {
+        if (nome.value == "" || plano.value == "" || especialidade.value == "" || crm.value == "" || senha.value == "" || confirmar_senha.value == "") {
+            error_element.style.display = "flex";
+            error_element.style.color = "#E76767";
+            error_element.innerText = "Por favor, preencha todos os campos.";
+        } else if (senha.value != confirmar_senha.value) {
+            error_element.style.display = "flex";
+            error_element.style.color = "#E76767";
+            error_element.innerText = "As senhas estão diferentes. Tente novamente.";
+        } else {
+            error_element.style.display = "flex";
+            error_element.style.color = "#2BA70C";
+            error_element.innerText = "Cadastro realizado com sucesso!";
             data = {
                 crm: crm.value,
                 nome: nome.value,
@@ -98,17 +137,19 @@ function cadastrar() {
                 especialidade: especialidade.innerText,
                 planoDeSaude: plano.innerText
             }
+            fetch(`${url}/add-medico`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
         }
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
     }
 }
-document.getElementById("cadastrar").addEventListener("click", cadastrar);
+for (let i = 0; i < cadastrar_element.length; i++) {
+    cadastrar_element[i].addEventListener("click", cadastrar);
+}
 
 // cadastro popup
 let cadastro_popup_shadow = document.getElementById("cadastro_popup_shadow");

@@ -7,8 +7,8 @@
 }
 
 .big_box:nth-child(2) {
-    width: calc(40% - 42px);
-    height: calc(80% - 64px);
+    width: calc(40% - 64px);
+    height: calc(80% - 42px);
     padding: 21px 32px 21px 32px;
 }
 

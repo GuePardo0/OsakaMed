@@ -7,14 +7,6 @@ public class Usuario {
     private int idade;
     private String planoDeSaude;
 
-    public Usuario(int id, String nome, String senha, int idade, String planoDeSaude) {
-        this.id = id;
-        this.nome = nome;
-        this.senha = senha;
-        this.idade = idade;
-        this.planoDeSaude = planoDeSaude;
-    }
-
     public int getId() {
         return id;
     }
@@ -54,5 +46,4 @@ public class Usuario {
     public void setPlanoDeSaude(String planoDeSaude) {
         this.planoDeSaude = planoDeSaude;
     }
-
 }

@@ -1,2 +1,2 @@
-1;Gustavo;1234;19;Não possui
+1;Gustavo;1234;19;Plus
 2;Vinícius;4321;19;Essencial

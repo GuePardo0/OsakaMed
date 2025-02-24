@@ -54,7 +54,7 @@
                         <div class="input_area" style="margin-bottom: 7px;">
                             <div class="div">
                                 <label>Digite o nome do(a) médico(a):</label>
-                                <input type="text" placeholder="Nome...">
+                                <input id="nome_seletor" type="text" placeholder="Nome...">
                             </div>
                         </div>
                         <div id="medicos_display" class="medicos_display"></div>
@@ -63,7 +63,7 @@
                     <div class="left drop_down_area">
                         <div class="drop_down_div" style="width: 60%;">
                             <label for="">Escolha a especialidade do médico(a):</label>
-                            <div data-removefirstelement="false" class="drop_down">
+                            <div data-removefirstelement="false" id="especialidade_seletor" class="drop_down">
                                 <div data-id="0" class="drop_down_ativador">
                                     <p>Todas</p>
                                     <img th:src="@{/assets/seta.png}" alt="">
@@ -77,13 +77,25 @@
                                 <div data-id="3">
                                     <p>Otorrinolaringologista</p>
                                 </div>
+                                <div data-id="4">
+                                    <p>Sexologista</p>
+                                </div>
+                                <div data-id="5">
+                                    <p>Psiquiatra</p>
+                                </div>
+                                <div data-id="6">
+                                    <p>Pneumologista</p>
+                                </div>
+                                <div data-id="7">
+                                    <p>Clínico geral</p>
+                                </div>
                             </div>
                         </div>
                         <div class="drop_down_div" style="width: 30%;">
                             <label for="">Escolha o plano:</label>
-                            <div data-removeFirstElement="true" class="drop_down">
+                            <div data-removeFirstElement="false" id="plano_seletor" class="drop_down">
                                 <div data-id="0" class="drop_down_ativador">
-                                    <p>Plano</p>
+                                    <p>Todos</p>
                                     <img th:src="@{/assets/seta.png}" alt="">
                                 </div>
                                 <div data-id="1">

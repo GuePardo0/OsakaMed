@@ -1,18 +1,17 @@
 package osaka.br.osakamed.model;
 
+import java.util.ArrayList;
+
 public class Medico {
     private String CRM;
     private String nome;
     private String senha;
     private String especialidade;
     private String planoDeSaude;
+    private ArrayList<Consulta> consultas = new ArrayList<>();
 
-    public Medico(String CRM, String nome, String senha, String especialidade, String planoDeSaude) {
-        this.CRM = CRM;
-        this.nome = nome;
-        this.senha = senha;
-        this.especialidade = especialidade;
-        this.planoDeSaude = planoDeSaude;
+    public void setConsultas(ArrayList<Consulta> consultas) {
+        this.consultas = consultas;
     }
 
     public String getCRM() {

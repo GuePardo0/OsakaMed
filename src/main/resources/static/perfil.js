@@ -21,16 +21,18 @@ if (user_is_doc == "true") {
 if (user_is_doc == "false") {
     user_is_doc = false;
 }
-const numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-let is_number = true;
-for (let i = 0; i < user_id.length; i++) {
-    if (!numeros.includes(user_id[i])) {
-        is_number = false;
-        break;
+if (typeof user_id == "string") {
+    const numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    let is_number = true;
+    for (let i = 0; i < user_id.length; i++) {
+        if (!numeros.includes(user_id[i])) {
+            is_number = false;
+            break;
+        }
     }
-}
-if (is_number) {
-    user_id = parseInt(user_id);
+    if (is_number) {
+        user_id = parseInt(user_id);
+    }
 }
 
 let nome = document.getElementById("nome");
@@ -39,7 +41,7 @@ let especialidade = document.getElementById("especialidade");
 let crm = document.getElementById("crm");
 function atualizar_informacoes() {
     if (!user_is_doc) {
-        fetch(`${url}/getusuarios`, {
+        fetch(`${url}/get-usuarios`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -81,7 +83,7 @@ function atualizar_informacoes() {
             console.error('Error:', error);
         });
     } else {
-        fetch(`${url}/getmedicos`, {
+        fetch(`${url}/get-medicos`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -126,6 +128,92 @@ function atualizar_informacoes() {
 }
 atualizar_informacoes();
 
-function vocetemcerteza() {
-    alert("VOCÊ TEM CERTEZA?")
+let excluir_conta_element = document.getElementById("excluir_conta");
+function excluir_conta() {
+    let data = {
+        "id": user_id,
+        "is_medico": user_is_doc
+    }
+    fetch(`${url}/excluir-conta`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    perfil_sair();
 }
+excluir_conta_element.addEventListener("click", excluir_conta);
+
+let alterar_senha_button = document.getElementById("alterar_senha_button");
+function alterar_senha() {
+    if (!user_is_doc) {
+        fetch(`${url}/get-usuarios`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(usuarios => {
+            let error = document.getElementById("error");
+            let senha_atual = document.getElementById("senha_atual");
+            let nova_senha = document.getElementById("nova_senha");
+            let confirmar_senha = document.getElementById("confirmar_senha");
+            for (let i = 0; i < usuarios.length; i++) {
+                if (usuarios[i].id == user_id) {
+                    let usuario = usuarios[i];
+                    if (senha_atual.value == "" || nova_senha.value == "" || confirmar_senha.value == "") {
+                        error.style.display = "flex";
+                        error.style.color = "#E76767";
+                        error.innerText = "Por favor, digite uma senha.";
+                    } else if (senha_atual.value != usuario.senha) {
+                        error.style.display = "flex";
+                        error.style.color = "#E76767";
+                        error.innerText = "Senha incorreta. Tente novamente.";
+                    }
+                    else if (nova_senha.value != confirmar_senha.value) {
+                        error.style.display = "flex";
+                        error.style.color = "#E76767";
+                        error.innerText = "As senhas estão diferentes. Tente novamente.";
+                    } else {
+                        error.style.display = "flex";
+                        error.style.color = "#2BA70C";
+                        error.innerText = "Senha alterada com sucesso!";
+                        let data = {
+                            "id": user_id,
+                            "is_medico": user_is_doc,
+                            "nova_senha": nova_senha.value
+                        }
+                        fetch(`${url}/alterar-senha`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        });
+                    }
+                    senha_atual.value = "";
+                    nova_senha.value = "";
+                    confirmar_senha.value = "";
+                }
+                break;
+            }
+        })
+    } else {
+        fetch(`${url}/get-medicos`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(medicos => {
+            for (let i = 0; i < medicos.length; i++) {
+                if (Number(medicos[i].crm) == user_id) {
+                }
+            }
+        })
+    }
+}
+alterar_senha_button.addEventListener("click", alterar_senha);

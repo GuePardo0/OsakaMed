@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="button_area">
-                        <button class="button" style="width: 161px;" onclick="vocetemcerteza()">
+                        <button id="excluir_conta" class="button" style="width: 161px;">
                             <img th:src="@{/assets/xis.png}" alt="">
                             <p>Excluir conta</p>
                         </button>
@@ -125,22 +125,22 @@
                         <div class="input_area">
                             <div class="div">
                                 <label for="">Digite sua senha atual</label>
-                                <input type="password" placeholder="Senha...">
+                                <input id="senha_atual" type="password" placeholder="Senha...">
                             </div>
                             <div class="div"></div>
                             <div class="div">
                                 <label for="">Digite a nova senha</label>
-                                <input type="password" placeholder="Senha...">
+                                <input id="nova_senha" type="password" placeholder="Senha...">
                                 <p><small><b>Recomendamos que sua senha possua no mínimo:</b><br><span>●</span> Uma letra maiúscula<br><span>●</span> Uma letra minúscula<br><span>●</span> Um número<br><span>●</span> Um caractere especial:<br>@ $ ! * # ? &</small></p>
                             </div>
                             <div class="div">
                                 <label for="">Confirme a senha</label>
-                                <input type="password" placeholder="Senha...">
-                                <small style="color: #E76767;">As senhas estão diferentes, digite novamente</small>
+                                <input id="confirmar_senha" type="password" placeholder="Senha...">
+                                <small id="error" style="display: none; color: #E76767;">As senhas estão diferentes. Tente novamente.</small>
                             </div>
                         </div>
                     </div>
-                    <button class="alterar_senha_button button">
+                    <button id="alterar_senha_button" class="alterar_senha_button button">
                         <p>Alterar senha</p>
                     </button>
                 </div>
